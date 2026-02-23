@@ -21,13 +21,14 @@ export const Header = ({
     marginRight: '2rem',
   }
   const mobileButtonPanelStyle = {
-    width: '100%',
+    border: '1px solid red',
+    width: '9rem',
     paddingLeft: '1.5rem',
     marginRight: '2rem',
   }
-
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+      {isMobile ? <p>IT IS MOBILE</p> : <p>It is not mobile.</p>}
       <StaticImage
         style={{
           marginLeft: '2rem',
