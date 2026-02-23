@@ -1,17 +1,10 @@
 import React from 'react';
-import { isMobile } from 'react-device-detect';
 // The Amber CRT Screen (for main content)
 export const AmberScreen = ({ children }: {
     children: React.ReactNode
 }) => {
-    // const isMobile = useMediaQuery('(max-width: 768px)');
-    const desktopStyle = {};
-    const mobileStyle = {
-        width: '100%',
-    }
     return (
         <div
-            style={isMobile ? mobileStyle : desktopStyle}
             className="w-full max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-[#222] to-[#111] p-4 shadow-[0_15px_30px_rgba(0,0,0,0.9),inset_0_2px_2px_rgba(255,255,255,0.1)] border-b-8 border-r-8 border-t-2 border-l-2 border-[#151515]"
         >
             <div className="w-full h-[600px] bg-[#0a0800] rounded-2xl border-4 border-black overflow-hidden relative shadow-[inset_0_0_50px_rgba(0,0,0,1)]">
