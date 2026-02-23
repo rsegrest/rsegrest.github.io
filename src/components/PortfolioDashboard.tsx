@@ -24,7 +24,7 @@ export const PortfolioDashboard = (props: {
 
     return (
         <>
-            {(currentView !== 'comms') &&
+            {(currentView !== 'contact') ?
                 <AmberScreen>
                     {currentView === 'home' && (
                         <div className="animate-in fade-in duration-700">
@@ -107,15 +107,15 @@ export const PortfolioDashboard = (props: {
                         </div>
                     )}
                 </AmberScreen>
-            }
+                : (null)}
             <div
-                className="flex flex-col xl:flex-row justify-between items-end gap-10 mt-4"
+                className="flex flex-col xl:flex-row justify-between items-end gap-10 mt-3"
             >
                 {/* Comms Panel (Footer) */}
                 <div
                     id="comms"
                     style={{ margin: '0 auto' }}
-                    className="max-w-4xl xl:w-1/3 p-6 rounded-2xl bg-[#111] border-2 border-[#c5a059] shadow-[0_10px_20px_rgba(0,0,0,0.6),inset_0_0_15px_rgba(0,0,0,1)] relative">
+                    className="max-w-3xl xl:w-1/4 p-6 rounded-2xl bg-[#111] border-2 border-[#c5a059] shadow-[0_10px_20px_rgba(0,0,0,0.6),inset_0_0_15px_rgba(0,0,0,1)] relative">
                     <div className="absolute -top-3 left-6 px-2 bg-[#111] text-[#c5a059] text-[10px] font-bold tracking-widest uppercase">
                         Comms Array
                     </div>
