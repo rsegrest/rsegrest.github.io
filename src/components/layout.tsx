@@ -46,8 +46,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <div
       className="layout-outer w-full max-w-6xl rounded-[40px] border-[6px] border-[#111] relative p-0 md:p-8 lg:p-12 flex flex-col gap-10 text-[0.6rem] md:text-base"
       style={STYLES.woodVeneerStyle}>
-      {/* <!-- VERSION 1.0.2 --> */}
-      <div style={{ display: 'none' }}>v1.0.2</div>
+      {/* <!-- VERSION 1.0.3 --> */}
+      <div style={{ display: 'none' }}>v1.0.3</div>
       <Header
         siteTitle={data.site.siteMetadata?.title || `Title`}
         currentView={currentView}

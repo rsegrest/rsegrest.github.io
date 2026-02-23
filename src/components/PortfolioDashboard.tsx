@@ -24,89 +24,90 @@ export const PortfolioDashboard = (props: {
 
     return (
         <>
-            <AmberScreen>
-                {currentView === 'home' && (
-                    <div className="animate-in fade-in duration-700">
-                        {booting ? (
-                            <BootSequence />
-                        ) : (
-                            <div className="space-y-10" style={{ margin: '0 auto' }}>
-                                <div className="border-b border-[#ffb000]/30 pb-6">
-                                    <h2 className="hello-text max-w-2xl text-4xl font-bold mb-4 tracking-wider">&gt; HELLO.</h2>
-                                    <p
-                                        style={{ margin: '0 auto' }}
-                                        className="leading-relaxed opacity-90 max-w-4xl">
-                                        <Markdown remarkPlugins={[remarkGfm]}>{aboutMe}</Markdown>
-                                    </p>
+            {(currentView !== 'comms') &&
+                <AmberScreen>
+                    {currentView === 'home' && (
+                        <div className="animate-in fade-in duration-700">
+                            {booting ? (
+                                <BootSequence />
+                            ) : (
+                                <div className="space-y-10" style={{ margin: '0 auto' }}>
+                                    <div className="border-b border-[#ffb000]/30 pb-6">
+                                        <h2 className="hello-text max-w-2xl text-4xl font-bold mb-4 tracking-wider">&gt; HELLO.</h2>
+                                        <p
+                                            style={{ margin: '0 auto' }}
+                                            className="leading-relaxed opacity-90 max-w-4xl">
+                                            <Markdown remarkPlugins={[remarkGfm]}>{aboutMe}</Markdown>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                )}
+                            )}
+                        </div>
+                    )}
 
-                {currentView === 'project' && activeProject && (
-                    <div
-                        style={{ margin: '0 auto' }}
-                        className="animate-in max-w-2xl fade-in duration-700 space-y-10">
-                        <button
-                            onClick={() => setCurrentView('home')}
-                            className="flex items-center gap-2 text-[#ffb000]/70 hover:text-[#ffb000] transition-colors mb-4 uppercase text-sm tracking-widest"
-                        >
-                            <ArrowLeft size={16} /> [RETURN]
-                        </button>
-
-
+                    {currentView === 'project' && activeProject && (
                         <div
                             style={{ margin: '0 auto' }}
-                            className="border-b border-[#ffb000]/30 pb-6">
-                            <h2 className="text-3xl font-bold mb-2">{activeProject.title}</h2>
-                            <p className="leading-relaxed opacity-90 max-w-4xl">
-                                <span>ID: {activeProject.id.toUpperCase()}</span>
-                            </p>
-                            <p className="leading-relaxed opacity-90 max-w-4xl">
-                                <span>DATE: {activeProject.date}</span>
-                            </p>
-                            <p className="leading-relaxed opacity-90 max-w-4xl">
-                                <a href={activeProject.github} className="flex items-center gap-2 border border-[#ffb000] px-4 py-2 hover:bg-[#ffb000] hover:text-black transition-colors font-bold">
-                                    <Github size={18} /> SRC_CODE
-                                </a>
-                            </p>
-                        </div>
+                            className="animate-in max-w-2xl fade-in duration-700 space-y-10">
+                            <button
+                                onClick={() => setCurrentView('home')}
+                                className="flex items-center gap-2 text-[#ffb000]/70 hover:text-[#ffb000] transition-colors mb-4 uppercase text-sm tracking-widest"
+                            >
+                                <ArrowLeft size={16} /> [RETURN]
+                            </button>
 
-                        <div className="space-y-6 opacity-90 leading-relaxed text-sm md:text-base whitespace-pre-line">
-                            {activeProject.longDesc.split('\n').map((line: string, idx: number) => {
-                                if (line.trim().startsWith('##')) return <h3 key={idx} className="text-xl font-bold mt-6 text-[#ffb000]">{line.replace('##', '').trim()}</h3>;
-                                if (line.trim().startsWith('**')) return <h4 key={idx} className="ml-4">{line.replace('**', '').trim()}</h4>;
-                                if (line.trim().startsWith('*')) return <p key={idx} className="ml-4">- {line.replace('*', '').trim()}</p>;
-                                return <p key={idx}>{line}</p>;
-                            })}
-                        </div>
-                    </div>
-                )}
-                {currentView === 'projects' ? (
-                    <div
-                        style={{ margin: '0 auto' }}
-                        className="animate-in fade-in duration-700 space-y-10 max-w-2xl">
-                        <h3 className="text-xl font-bold mb-6 tracking-widest flex items-center gap-2">
-                            <span className="w-2 h-4 bg-[#ffb000] inline-block"></span> PROJECT_LOGS
-                        </h3>
-                        <div className="grid gap-6">
-                            {PROJECTS.map(project => (
-                                <ProjectCard project={project} setActiveProject={setActiveProject} setCurrentView={setCurrentView} />
-                            ))}
-                        </div>
-                    </div>
-                ) : null}
-                {currentView === 'resume' && (
-                    <div
-                        style={{ margin: '0 auto' }}
-                        className="animate-in fade-in duration-700 space-y-10 max-w-2xl"
-                    >
-                        <Markdown remarkPlugins={[remarkGfm]}>{resume}</Markdown>
-                    </div>
-                )}
-            </AmberScreen>
 
+                            <div
+                                style={{ margin: '0 auto' }}
+                                className="border-b border-[#ffb000]/30 pb-6">
+                                <h2 className="text-3xl font-bold mb-2">{activeProject.title}</h2>
+                                <p className="leading-relaxed opacity-90 max-w-4xl">
+                                    <span>ID: {activeProject.id.toUpperCase()}</span>
+                                </p>
+                                <p className="leading-relaxed opacity-90 max-w-4xl">
+                                    <span>DATE: {activeProject.date}</span>
+                                </p>
+                                <p className="leading-relaxed opacity-90 max-w-4xl">
+                                    <a href={activeProject.github} className="flex items-center gap-2 border border-[#ffb000] px-4 py-2 hover:bg-[#ffb000] hover:text-black transition-colors font-bold">
+                                        <Github size={18} /> SRC_CODE
+                                    </a>
+                                </p>
+                            </div>
+
+                            <div className="space-y-6 opacity-90 leading-relaxed text-sm md:text-base whitespace-pre-line">
+                                {activeProject.longDesc.split('\n').map((line: string, idx: number) => {
+                                    if (line.trim().startsWith('##')) return <h3 key={idx} className="text-xl font-bold mt-6 text-[#ffb000]">{line.replace('##', '').trim()}</h3>;
+                                    if (line.trim().startsWith('**')) return <h4 key={idx} className="ml-4">{line.replace('**', '').trim()}</h4>;
+                                    if (line.trim().startsWith('*')) return <p key={idx} className="ml-4">- {line.replace('*', '').trim()}</p>;
+                                    return <p key={idx}>{line}</p>;
+                                })}
+                            </div>
+                        </div>
+                    )}
+                    {currentView === 'projects' ? (
+                        <div
+                            style={{ margin: '0 auto' }}
+                            className="animate-in fade-in duration-700 space-y-10 max-w-2xl">
+                            <h3 className="text-xl font-bold mb-6 tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-4 bg-[#ffb000] inline-block"></span> PROJECT_LOGS
+                            </h3>
+                            <div className="grid gap-6">
+                                {PROJECTS.map(project => (
+                                    <ProjectCard project={project} setActiveProject={setActiveProject} setCurrentView={setCurrentView} />
+                                ))}
+                            </div>
+                        </div>
+                    ) : null}
+                    {currentView === 'resume' && (
+                        <div
+                            style={{ margin: '0 auto' }}
+                            className="animate-in fade-in duration-700 space-y-10 max-w-2xl"
+                        >
+                            <Markdown remarkPlugins={[remarkGfm]}>{resume}</Markdown>
+                        </div>
+                    )}
+                </AmberScreen>
+            }
             <div
                 className="flex flex-col xl:flex-row justify-between items-end gap-10 mt-4"
             >
