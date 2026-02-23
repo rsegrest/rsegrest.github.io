@@ -2,7 +2,7 @@
   "name": "gatsby-gh-page",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "author": "Rick Segrest <rsegrest77@gmail.com>",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
@@ -29,10 +29,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/rsegrest/rsegrest.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/rsegrest/rsegrest.github.io/issues"
   },
   "dependencies": {
     "gatsby": "^5.16.1",
