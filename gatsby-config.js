@@ -8,12 +8,12 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/gatsby-gh-page",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Rick Segrest`,
     description: `Rick Segrest's GitHub Page.`,
     author: `Rick Segrest`,
-    siteUrl: `https://ricksegrest.github.io/gatsby-gh-page/`,
+    siteUrl: `https://rsegrest.github.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
