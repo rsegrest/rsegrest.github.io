@@ -5,7 +5,7 @@ export const AmberScreen = ({ children }: {
 }) => {
     return (
         <div
-            className="w-full max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-[#222] to-[#111] p-4 shadow-[0_15px_30px_rgba(0,0,0,0.9),inset_0_2px_2px_rgba(255,255,255,0.1)] border-b-8 border-r-8 border-t-2 border-l-2 border-[#151515]"
+            className="w-full md:max-w-5xl mx-auto rounded-none md:rounded-3xl bg-gradient-to-b from-[#222] to-[#111] p-1 md:p-4 shadow-[0_15px_30px_rgba(0,0,0,0.9),inset_0_2px_2px_rgba(255,255,255,0.1)] border-b-4 md:border-b-8 border-r-4 md:border-r-8 border-t-2 border-l-2 border-[#151515]"
         >
             <div className="w-full h-[600px] bg-[#0a0800] rounded-2xl border-4 border-black overflow-hidden relative shadow-[inset_0_0_50px_rgba(0,0,0,1)]">
                 {/* Scanlines and screen glare overlays */}

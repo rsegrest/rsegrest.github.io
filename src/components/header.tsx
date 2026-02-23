@@ -16,14 +16,14 @@ export const Header = ({
   return (
     <div className="flex flex-col md:flex-row justify-between items-center md:gap-6">
       <StaticImage
-        className="rounded-2xl mb-4 md:mb-0 md:ml-8"
+        className="rounded-2xl mx-auto md:mx-0 mb-4 md:mb-0 md:ml-8"
         src="../images/rs-brand-emblem.png"
         width={256}
         alt="Rick Segrest"
       />
 
       <div
-        className="w-80 md:w-[36rem] pl-4 md:pl-6 mr-0 md:mr-8 flex p-4 md:gap-12 rounded-xl bg-black/40 shadow-[inset_0_4px_10px_rgba(0,0,0,0.8)] border-t border-white/10">
+        className="w-full max-w-[20rem] md:max-w-none md:w-[36rem] px-2 md:pl-6 md:mr-8 flex justify-center md:justify-start p-4 gap-1 md:gap-12 rounded-xl bg-black/40 shadow-[inset_0_4px_10px_rgba(0,0,0,0.8)] border-t border-white/10">
         <DashButton
           label="SYS"
           active={currentView === 'home'}
