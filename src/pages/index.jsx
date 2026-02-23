@@ -1,17 +1,23 @@
-import * as React from "react"
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronRight, FileText, ArrowLeft, Terminal, Cpu, Database, Cloud } from 'lucide-react';
+
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
+import GoldTrim from "../components/GoldTrim"
+import * as STYLES from "../styles/style"
+
+import DashButton from "../components/DashButton"
+
 const links = [
   {
-    text: "Tutorial",
+    text: "hello_world()",
     url: "https://www.gatsbyjs.com/docs/tutorial",
     description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
+      "I am a Senior Software Engineer and UX/UI Subject Matter Expert with over 20 years of experience, specializing in the intersection of UI/UX Design, GUI Development, and Complex System Visualization.",
   },
   {
     text: "Examples",
@@ -71,18 +77,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => (
   <Layout>
     <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
+
       <p className={styles.intro}>
         <b>Example pages:</b>{" "}
         {samplePageLinks.map((link, i) => (
@@ -94,7 +89,7 @@ const IndexPage = () => (
         <br />
         Edit <code>src/pages/index.js</code> to update this page.
       </p>
-    </div>
+    </div >
     <ul className={styles.list}>
       {links.map(link => (
         <li key={link.url} className={styles.listItem}>
@@ -108,13 +103,15 @@ const IndexPage = () => (
         </li>
       ))}
     </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
+    {
+      moreLinks.map((link, i) => (
+        <React.Fragment key={link.url}>
+          <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+          {i !== moreLinks.length - 1 && <> · </>}
+        </React.Fragment>
+      ))
+    }
+  </Layout >
 )
 
 /**

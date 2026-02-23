@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
-// You can delete this file if you're not using it
+// This file runs in the browser and imports your global CSS so it applies everywhere
+import './src/styles/global.css';
