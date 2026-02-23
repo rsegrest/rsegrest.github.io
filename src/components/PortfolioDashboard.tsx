@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ChevronRight, FileText, ArrowLeft, Terminal, Cpu, Database, Cloud } from 'lucide-react';
 import AmberScreen from './AmberScreen';
-import AnalogGauge from './AnalogGauge';
 import PROJECTS from '../content/projects.tsx';
-import SKILLS from '../content/skills.tsx';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import resume from '../content/resume-md.ts'
@@ -11,9 +9,8 @@ import { aboutMe } from '../content/about.ts'
 import BootSequence from './BootSequence';
 import ProjectCard from './ProjectCard';
 
-// import GoldTrim from './GoldTrim';
-// import DashButton from './DashButton';
-// import { leatherStyle, woodVeneerStyle } from './style';
+// import AnalogGauge from './AnalogGauge';
+// import SKILLS from '../content/skills.tsx';
 
 export const PortfolioDashboard = (props: {
     currentView: string,
@@ -99,14 +96,7 @@ export const PortfolioDashboard = (props: {
                             ))}
                         </div>
                     </div>
-                ) : (
-                    <div
-                        style={{ margin: '0 auto' }}
-                        className="animate-in fade-in duration-700 space-y-10 max-w-2xl"
-                    >
-                        NOT PROJECTS
-                    </div>
-                )}
+                ) : null}
                 {currentView === 'resume' && (
                     <div
                         style={{ margin: '0 auto' }}

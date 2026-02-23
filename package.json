@@ -43,6 +43,7 @@
     "gatsby-transformer-sharp": "^5.16.0",
     "lucide-react": "^0.575.0",
     "react": "^19.2.4",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.4",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1"

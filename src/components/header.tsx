@@ -1,9 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import GoldTrim from './GoldTrim';
+import { BrowserView, MobileView, isMobile } from 'react-device-detect';
 import DashButton from './DashButton';
-import * as STYLES from "../styles/style";
-// import roosterEmblem from "../images/rooster-emblem.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 export const Header = ({
@@ -17,8 +14,19 @@ export const Header = ({
   setCurrentView: React.Dispatch<React.SetStateAction<string>>,
   navigateTo: (view: string) => void
 }) => {
-  return (
 
+  const buttonPanelStyle = {
+    width: '36rem',
+    paddingLeft: '1.5rem',
+    marginRight: '2rem',
+  }
+  const mobileButtonPanelStyle = {
+    width: '100%',
+    paddingLeft: '1.5rem',
+    marginRight: '2rem',
+  }
+
+  return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
       <StaticImage
         style={{
@@ -27,16 +35,10 @@ export const Header = ({
           borderRadius: '1rem',
         }}
         src="../images/rs-brand-emblem.png" width={256} alt="Rick Segrest" />
+
       <div
-        style={{
-          width: '36rem',
-          paddingLeft: '1.5rem',
-          marginRight: '2rem',
-        }}
+        style={isMobile ? mobileButtonPanelStyle : buttonPanelStyle}
         className="flex gap-12 p-4 rounded-xl bg-black/40 shadow-[inset_0_4px_10px_rgba(0,0,0,0.8)] border-t border-white/10">
-        {/* <div>
-          {currentView}
-        </div> */}
         <DashButton
           label="SYS"
           active={currentView === 'home'}
@@ -70,7 +72,7 @@ export const Header = ({
           }}
         />
       </div>
-    </div>
+    </div >
   );
 }
 
